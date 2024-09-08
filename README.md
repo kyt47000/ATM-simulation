@@ -19,6 +19,26 @@ The ATM Simulation System offers a user-friendly interface where users can inter
 - **Email Notifications**: Notifies users of successful transactions and account activities via email.
 - **Persistent Storage**: Saves user data and transaction history to files for easy management.
 
+## Screenshots
+
+Here are some screenshots of the ATM Simulation System:
+
+1. **Splash Screen**
+   ![Splash Screen](./images/ss1.png)
+
+2. **Signin Dashboard**
+   ![Signin Dashboard](./images/ss2.png)
+
+3. **Signup/Registar Dashboard**
+   ![Signup/Registar Dashboard](./images/ss3.png)
+
+4. **Main Dashborad**
+   ![Main Dashborad](./images/ss4.png)
+
+5. **Transaction History**
+   ![Transaction History](./images/ss5.png)
+
+   
 ## Development Environment
 
 ### IntelliJ IDEA
