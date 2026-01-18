@@ -160,6 +160,111 @@ Update the constructor with your new credentials:
 * App passwords are application-specific.
 * Revoking an app password immediately disables email access for that specific instance.
 * Compatible with standard JavaMail configurations.
+
+Got it 👍 — the issue is **formatting**, not content.
+Below is **plain text Markdown** with **NO code fences around the whole thing**, so you can **select + copy normally**.
+
+Just copy everything you see.
+
+---
+
+# Running the Java Project (VS Code / Terminal)
+
+This project is a plain Java application (no Maven or Gradle) and is compiled and executed using the command line.
+External libraries are stored in the `exLib` directory.
+
+---
+
+## Project Structure
+
+```
+src/
+├── Main.java
+├── EmailService.java
+├── OTPManner.java
+├── ChangePIN.java
+├── Deposit.java
+├── ...
+├── exLib/
+│   ├── activation-1.1.jar
+│   └── javax.mail-1.6.2.jar
+```
+
+---
+
+## Compile the Project
+
+Navigate to the `src` directory:
+
+```
+cd src
+```
+
+Compile all Java source files and include external libraries:
+
+```
+javac -cp "exLib/*" *.java
+```
+
+Note: You may see warnings about deprecated APIs. These do not prevent the program from running.
+
+---
+
+## Run the Application
+
+After successful compilation, run the main class:
+
+```
+java -cp ".:exLib/*" Main
+```
+
+* `.` refers to the current directory
+* `exLib/*` includes all external JAR files
+* `Main` is the entry-point class
+
+---
+
+## Common Issues
+
+### Could not find or load main class Main
+
+* Make sure you are inside the `src` directory
+* Ensure `Main.java` contains a `main` method
+* Recompile before running
+
+### package javax.mail does not exist
+
+* Confirm JAR files exist inside `exLib`
+* Compile using:
+
+  javac -cp "exLib/*" *.java
+
+---
+
+## Optional: One-Command Run Script (Linux)
+
+Create a file named `run.sh` inside the `src` directory:
+
+```
+#!/bin/bash
+javac -cp "exLib/*" *.java && java -cp ".:exLib/*" Main
+```
+
+Make it executable:
+
+```
+chmod +x run.sh
+```
+
+Run the project:
+
+```
+./run.sh
+```
+
+---
+
+
 * 
 ## Built With
 
