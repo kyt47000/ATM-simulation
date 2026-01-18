@@ -265,7 +265,7 @@ Run the project:
 ---
 
 
-* 
+ 
 ## Built With
 
 - **Java Swing**: For building the GUI.
@@ -283,4 +283,3 @@ This project is licensed under the MIT License. See the [LICENSE](./LICENSE) fil
 Yash Kayastha
 
 Feel free to contribute to the project by forking the repository and submitting pull requests. For major changes, please open an issue first to discuss what you would like to change.
-
