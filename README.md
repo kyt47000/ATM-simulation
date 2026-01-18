@@ -80,19 +80,87 @@ IntelliJ IDEA was chosen for its comprehensive support for Java development, int
 4. **Run the Project**:
    Execute the `Main.java` file to start the ATM simulation.
 
+# Email Service Configuration
+
+This project includes an email notification feature implemented using the **JavaMail API**. To enable email notifications or configure a different email provider, update the email credentials used by the application.
+
+---
+
 ## Modifying Email Service Credentials
 
-The system includes an email notification feature that uses the JavaMail API. If you need to enable email notifications or use a different email service, you'll need to edit the credentials in `EmailService.java`:
+The email credentials are defined in `EmailService.java`.
 
-1. Open `EmailService.java`.
-2. Find the following lines:
-   ```java
-   this("your-email@example.com", "your-email-password");
-   ```
-3. Replace `"your-email@example.com"` with your email address and `"your-email-password"` with your email password or an app-specific password.
+### Steps
+1.  Open `EmailService.java`.
+2.  Locate the following line:
+    `this("your-email@example.com", "your-email-password");`
+3.  **Replace:**
+    * `your-email@example.com` with your Gmail address.
+    * `your-email-password` with a **Gmail App Password**.
 
-**Note:** For security reasons, avoid using your main email password. Instead, use an app-specific password if your email provider supports it.
+---
 
+## Gmail App Password Setup
+
+For security reasons, do not use your main Gmail password. Instead, use a Google App Password.
+
+**Prerequisite:** 2-Step Verification must be enabled on your Google account.
+
+### Step 1: Enable 2-Step Verification
+1.  Visit [myaccount.google.com/security](https://myaccount.google.com/security).
+2.  Under **How you sign in to Google**, enable **2-Step Verification**.
+3.  Complete the verification process.
+
+### Step 2: Generate a Gmail App Password
+1.  Go to [myaccount.google.com/apppasswords](https://myaccount.google.com/apppasswords).
+2.  Sign in to your Google account.
+3.  **Select:**
+    * **App:** Mail
+    * **Device:** Other (Custom) → enter a name (e.g., *JavaMail*)
+4.  Click **Generate**.
+5.  Copy the generated **16-character app password**.
+
+### Step 3: Update EmailService.java
+Update the constructor with your new credentials:
+`this("your-email@gmail.com", "abcdefghijklmnop");`
+
+---
+
+## SMTP Settings (Gmail)
+
+| Property | Value |
+| :--- | :--- |
+| `mail.smtp.host` | `smtp.gmail.com` |
+| `mail.smtp.port` | `587` |
+| `mail.smtp.auth` | `true` |
+| `mail.smtp.starttls.enable` | `true` |
+
+---
+
+## Security Best Practices
+
+> [!IMPORTANT]
+> * **Never** use your primary Gmail password in the code.
+> * **Never** commit credentials to version control (use `.gitignore` further).
+> * Use **environment variables** for production environments.
+> * Revoke the app password immediately if it is compromised.
+
+---
+
+## Troubleshooting
+
+### App Password Option Not Visible
+* Ensure **2-Step Verification** is fully enabled.
+* Work or school Google accounts may restrict the creation of app passwords.
+* Try logging out and signing back in to your Google account to refresh settings.
+
+---
+
+## Notes
+* App passwords are application-specific.
+* Revoking an app password immediately disables email access for that specific instance.
+* Compatible with standard JavaMail configurations.
+* 
 ## Built With
 
 - **Java Swing**: For building the GUI.
